@@ -9,7 +9,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     let mut sub = nc.subscribe("test").await?;
 
     while let Some(msg) = sub.next().await {
-        println!("Message: {}", String::from_utf8(msg.data)?);
+        println!("Message: {:?}", msg);
     }
     Ok(())
 }
